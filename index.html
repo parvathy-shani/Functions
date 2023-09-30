@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CHOCOLATE COOKIE RECIPE</title>
+    <style>
+        body 
+        {
+            background-image: url('background.jpg');
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .title 
+        {
+            font-size: 40px;
+            width: 700px;
+            height: auto;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            text-align: center;
+            color: white;
+            align-self: center; /* Align title to the top */
+        }
+
+        .box 
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 350px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.65);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+        }
+
+        .button 
+        {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            align-self: center; /* Align button to the bottom */
+        }
+
+        .button-container 
+        {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .content 
+        {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        img 
+        {
+            width: 270px;
+            height: 250px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <p><strong>CHOCOLATE COOKIE RECIPE</strong></p>
+    </div>
+
+    <div class="button-container">
+        <div class="box">
+            <p id="INGREDIENTS" class="content"><strong>INGREDIENTS</strong></p>
+            <img id="Ingredientimage" src="Ingredients.png" width="270" height="auto">
+            <button id="Ingredient" class="button">Know more</button>
+        </div>
+
+        <div class="box">
+            <p class="content"><strong>INSTRUCTIONS</strong></p>
+            <img id="Instructionimage" src="Instructions.png" width="300" height="auto">
+            <button id='Instruction' class="button">Know more</button>
+        </div>
+
+        <div class="box">
+            <p class="content"><strong>ENJOY</strong></p>
+            <img id="cookieimage" src="Cookie.png" width="270" height="auto">
+            <button id="cookie" class="button">Know more</button>
+        </div>
+    </div>
+
+    <script>
+        const enjoybutton = document.getElementById('cookie');
+        const enjoyimage = document.getElementById('cookieimage');
+
+        const instructionbutton = document.getElementById('Instruction');
+        const instructionimage = document.getElementById('Instructionimage');
+
+        const ingredientbutton = document.getElementById('Ingredient');
+        const ingredientimage = document.getElementById('Ingredientimage');
+
+        let isImage1 = true;
+
+        function enjoy() {
+            if (isImage1) {
+                enjoyimage.src = "Crumps.png";
+                
+            } else {
+                enjoyimage.src = "Cookie.png";
+                
+            }
+            isImage1 = !isImage1; // Toggle the flag
+        }
+        enjoybutton.addEventListener('click', enjoy);
+
+        function instructions() {
+            if (isImage1) {
+                instructionimage.src = "Instructions_back.jpg";
+            } else {
+                instructionimage.src = "Instructions.png";
+            }
+            isImage1 = !isImage1; // Toggle the flag
+        }
+        instructionbutton.addEventListener('click', instructions);
+
+        function ingredients() {
+            if (isImage1) {
+                ingredientimage.src = "Ingredients_back.jpg";
+            } else {
+                ingredientimage.src = "Ingredients.png";
+            }
+            isImage1 = !isImage1; // Toggle the flag
+        }
+        ingredientbutton.addEventListener('click', ingredients);
+    </script>
+
+</body>
+
+</html>
